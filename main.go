@@ -26,6 +26,7 @@ func main() {
 		panic("no token")
 	}
 
+	certmagic.DefaultACME.CA = certmagic.LetsEncryptStagingCA
 	certmagic.DefaultACME.DNS01Solver = &certmagic.DNS01Solver{
 		DNSProvider: &duckdns.Provider{
 			APIToken: token,
